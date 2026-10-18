@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polina Kuzina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::selection {
+      background: #C4A484;
+      color: #111315;
+    }
+    .lang-ru { display: none; }
+  </style>
+</head>
+<body class="bg-[#111315] font-['Lora',serif] text-[#E8E6E3] antialiased">
+
+  <section class="grid min-h-screen grid-cols-1 lg:grid-cols-2">
+    <div class="relative min-h-[52vh] lg:min-h-screen">
+      <img
+        src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1000&auto=format&fit=crop"
+        alt="Pale light across a quiet concrete wall"
+        class="absolute inset-0 h-full w-full object-cover"
+      >
+    </div>
+
+    <div class="relative flex items-center px-8 py-20 sm:px-14 lg:px-20 xl:px-28">
+      <header class="absolute right-8 top-6 sm:right-14 lg:right-20 xl:right-28">
+        <button id="lang-toggle" class="text-sm font-sans text-[#C4A484] hover:underline cursor-pointer">RU / EN</button>
+      </header>
+      <div class="max-w-xl">
+        <p class="text-xs uppercase tracking-[0.35em] text-[#C4A484]"><span class="lang-en">Prose &amp; Poetry</span><span class="lang-ru">Проза и поэзия</span></p>
+        <h1 class="mt-8 font-['Playfair_Display',serif] text-6xl font-medium leading-[1.05] sm:text-7xl lg:text-8xl">
+          Polina Kuzina
+        </h1>
+        <p class="mt-8 max-w-md text-xl leading-loose text-[#E8E6E3]/80">
+          <span class="lang-en">Stories on Psychology, Silence, and Finding Meaning</span><span class="lang-ru">Истории о психологии, тишине и поиске смысла</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-28 md:py-36">
+    <div class="mx-auto max-w-[600px] text-center">
+      <p class="text-xs uppercase tracking-[0.35em] text-[#C4A484]"><span class="lang-en">A note</span><span class="lang-ru">Заметка</span></p>
+      <h2 class="mt-6 font-['Playfair_Display',serif] text-4xl font-medium md:text-5xl">
+        <span class="lang-en">About the Author</span><span class="lang-ru">Об авторе</span>
+      </h2>
+      <div class="mx-auto mt-8 h-px w-12 bg-[#C4A484]"></div>
+      <p class="mt-10 text-lg leading-loose text-[#E8E6E3]/90">
+        <span class="lang-en">I am a writer exploring the depths of human psychology through prose and poetry. My work is a search for words that make us feel safe, a study of what happens when we are left alone with our thoughts. Here, I share my most personal stories.</span><span class="lang-ru">Я писатель, исследующий глубины человеческой психологии через прозу и поэзию. Мое творчество — это поиск слов, которые помогают нам чувствовать себя в безопасности, и исследование того, что происходит, когда мы остаемся наедине со своими мыслями. Здесь я делюсь своими самыми личными историями.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="px-6 pb-28 md:px-10 md:pb-36">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 text-center">
+        <p class="text-xs uppercase tracking-[0.35em] text-[#C4A484]"><span class="lang-en">The journal</span><span class="lang-ru">Журнал</span></p>
+        <h2 class="mt-6 font-['Playfair_Display',serif] text-4xl font-medium md:text-5xl">
+          <span class="lang-en">Selected Prose</span><span class="lang-ru">Избранная проза</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-6">
+        <article class="flex flex-col border border-[#C4A484]/15 bg-[#1a1d21] p-8 transition duration-300 hover:border-[#C4A484]/50 md:p-10 xl:col-span-2">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#C4A484]">I</p>
+          <h3 class="mt-6 font-['Playfair_Display',serif] text-3xl font-medium"><span class="lang-en">The Ring</span><span class="lang-ru">Кольцо</span></h3>
+          <p class="mt-5 flex-1 text-lg italic leading-loose text-[#E8E6E3]/75">
+            <span class="lang-en">“And along with you — their love.”</span><span class="lang-ru">«А вместе с тобой — и их любовь.»</span>
+          </p>
+          <a href="ring.html" class="mt-8 text-sm uppercase tracking-[0.2em] text-[#C4A484] transition hover:text-[#E8E6E3]">
+            <span class="lang-en">Read Story →</span><span class="lang-ru">Читать →</span>
+          </a>
+        </article>
+
+        <article class="flex flex-col border border-[#C4A484]/15 bg-[#1a1d21] p-8 transition duration-300 hover:border-[#C4A484]/50 md:p-10 xl:col-span-2">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#C4A484]">II</p>
+          <h3 class="mt-6 font-['Playfair_Display',serif] text-3xl font-medium"><span class="lang-en">The Cliff</span><span class="lang-ru">Обрыв</span></h3>
+          <p class="mt-5 flex-1 text-lg italic leading-loose text-[#E8E6E3]/75">
+            <span class="lang-en">“There is no bottom, only a hole.”</span><span class="lang-ru">«Там нет дна, только яма.»</span>
+          </p>
+          <a href="cliff.html" class="mt-8 text-sm uppercase tracking-[0.2em] text-[#C4A484] transition hover:text-[#E8E6E3]">
+            <span class="lang-en">Read Story →</span><span class="lang-ru">Читать →</span>
+          </a>
+        </article>
+
+        <article class="flex flex-col border border-[#C4A484]/15 bg-[#1a1d21] p-8 transition duration-300 hover:border-[#C4A484]/50 md:p-10 xl:col-span-2">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#C4A484]">III</p>
+          <h3 class="mt-6 font-['Playfair_Display',serif] text-3xl font-medium"><span class="lang-en">The Old Fisherman</span><span class="lang-ru">Старый рыбак</span></h3>
+          <p class="mt-5 flex-1 text-lg italic leading-loose text-[#E8E6E3]/75">
+            <span class="lang-en">“And I am alone.”</span><span class="lang-ru">«И я одна.»</span>
+          </p>
+          <a href="old-fisherman.html" class="mt-8 text-sm uppercase tracking-[0.2em] text-[#C4A484] transition hover:text-[#E8E6E3]">
+            <span class="lang-en">Read Story →</span><span class="lang-ru">Читать →</span>
+          </a>
+        </article>
+
+        <article class="flex flex-col border border-[#C4A484]/15 bg-[#1a1d21] p-8 transition duration-300 hover:border-[#C4A484]/50 md:p-10 xl:col-span-2 xl:col-start-2">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#C4A484]">IV</p>
+          <h3 class="mt-6 font-['Playfair_Display',serif] text-3xl font-medium"><span class="lang-en">The Shadow</span><span class="lang-ru">Тень</span></h3>
+          <p class="mt-5 flex-1 text-lg italic leading-loose text-[#E8E6E3]/75">
+            <span class="lang-en">“I am tired of being absent.”</span><span class="lang-ru">«Я устала отсутствовать.»</span>
+          </p>
+          <a href="shadow.html" class="mt-8 text-sm uppercase tracking-[0.2em] text-[#C4A484] transition hover:text-[#E8E6E3]">
+            <span class="lang-en">Read Story →</span><span class="lang-ru">Читать →</span>
+          </a>
+        </article>
+
+        <article class="flex flex-col border border-[#C4A484]/15 bg-[#1a1d21] p-8 transition duration-300 hover:border-[#C4A484]/50 md:p-10 xl:col-span-2">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#C4A484]">V</p>
+          <h3 class="mt-6 font-['Playfair_Display',serif] text-3xl font-medium"><span class="lang-en">The Room</span><span class="lang-ru">Комната</span></h3>
+          <p class="mt-5 flex-1 text-lg italic leading-loose text-[#E8E6E3]/75">
+            <span class="lang-en">“What if it's not about the room?”</span><span class="lang-ru">«А что, если дело не в комнате?»</span>
+          </p>
+          <a href="room.html" class="mt-8 text-sm uppercase tracking-[0.2em] text-[#C4A484] transition hover:text-[#E8E6E3]">
+            <span class="lang-en">Read Story →</span><span class="lang-ru">Читать →</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-[#C4A484]/20 px-6 py-14 text-center">
+    <p class="font-['Playfair_Display',serif] text-2xl">Polina Kuzina</p>
+    <p class="mt-6 text-lg leading-loose">
+      <span class="lang-en">Contact: <a href="https://t.me/kUzYa_17" target="_blank" class="text-[#C4A484] hover:underline">Telegram</a></span><span class="lang-ru">Связаться: <a href="https://t.me/kUzYa_17" target="_blank" class="text-[#C4A484] hover:underline">Telegram</a></span>
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('lang-toggle');
+      const enElements = document.querySelectorAll('.lang-en');
+      const ruElements = document.querySelectorAll('.lang-ru');
+
+      const displayFor = (el) => (el.tagName === 'SPAN' ? 'inline' : 'block');
+      const show = (elements) => elements.forEach(el => el.style.display = displayFor(el));
+      const hide = (elements) => elements.forEach(el => el.style.display = 'none');
+
+      const apply = (lang) => {
+        if (lang === 'ru') {
+          hide(enElements);
+          show(ruElements);
+        } else {
+          hide(ruElements);
+          show(enElements);
+        }
+        localStorage.setItem('lang', lang);
+      };
+
+      apply(localStorage.getItem('lang') === 'ru' ? 'ru' : 'en');
+
+      toggleBtn.addEventListener('click', () => {
+        const isEnVisible = enElements[0] && enElements[0].style.display !== 'none';
+        apply(isEnVisible ? 'ru' : 'en');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Old Fisherman — Polina Kuzina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::selection {
+      background: #C4A484;
+      color: #111315;
+    }
+    .lang-ru { display: none; }
+  </style>
+</head>
+<body class="bg-[#111315] font-['Lora',serif] text-[#E8E6E3] antialiased">
+  <article class="mx-auto max-w-[600px] px-6 pb-28 pt-12 md:pt-20">
+    <div class="flex items-start justify-between gap-8">
+      <a href="index.html" class="text-sm tracking-wide text-[#C4A484] transition hover:text-[#E8E6E3]">
+        <span class="lang-en">← Back to all stories</span><span class="lang-ru">← Назад ко всем историям</span>
+      </a>
+      <button id="lang-toggle" class="text-sm font-sans text-[#C4A484] hover:underline cursor-pointer">RU / EN</button>
+    </div>
+
+    <header class="mb-14 mt-16">
+      <p class="text-xs uppercase tracking-[0.32em] text-[#C4A484]"><span class="lang-en">Prose</span><span class="lang-ru">Проза</span></p>
+      <h1 class="mt-5 font-['Playfair_Display',serif] text-5xl font-medium leading-tight md:text-6xl"><span class="lang-en">The Old Fisherman</span><span class="lang-ru">Старый рыбак</span></h1>
+      <div class="mt-8 h-px w-16 bg-[#C4A484]"></div>
+    </header>
+
+    <div class="space-y-8 text-lg leading-loose">
+      <p><span class="lang-en">And I am alone. And under the plague waves I, like an old grey-haired fisherman in a stormy sea, will not have time to moor to the shore. And somewhere out there, in the distance, hidden from humble eyes, I will drown.</span><span class="lang-ru">И я одна. И под чумными волнами я, как старый седой рыбак в бурном море, не успею пристать к берегу. И где-то там, вдали, скрытая от смиренных глаз, я утону.</span></p>
+      <p><span class="lang-en">Although I have long been going to the bottom, but now the storm has intensified. And that is the whole difference. And now it is so quiet under the water, and the panic begins to weaken. Finally, a new life fills my lungs to the brim. The body is burning, but in any case it is no longer as cold as from simple human loneliness. And this new sensation is my salvation, and it is also my destruction.</span><span class="lang-ru">Хотя я давно иду ко дну, теперь буря усилилась. И в этом вся разница. И теперь под водой так тихо, и паника начинает слабеть. Наконец новая жизнь наполняет мои лёгкие до краёв. Тело горит, но всё равно это уже не так холодно, как от простого человеческого одиночества. И это новое ощущение — моё спасение, и оно же — моё разрушение.</span></p>
+    </div>
+  </article>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('lang-toggle');
+      const enElements = document.querySelectorAll('.lang-en');
+      const ruElements = document.querySelectorAll('.lang-ru');
+
+      const displayFor = (el) => (el.tagName === 'SPAN' ? 'inline' : 'block');
+      const show = (elements) => elements.forEach(el => el.style.display = displayFor(el));
+      const hide = (elements) => elements.forEach(el => el.style.display = 'none');
+
+      const apply = (lang) => {
+        if (lang === 'ru') {
+          hide(enElements);
+          show(ruElements);
+        } else {
+          hide(ruElements);
+          show(enElements);
+        }
+        localStorage.setItem('lang', lang);
+      };
+
+      apply(localStorage.getItem('lang') === 'ru' ? 'ru' : 'en');
+
+      toggleBtn.addEventListener('click', () => {
+        const isEnVisible = enElements[0] && enElements[0].style.display !== 'none';
+        apply(isEnVisible ? 'ru' : 'en');
+      });
+    });
+  </script>
+</body>
+</html>

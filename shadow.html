@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shadow — Polina Kuzina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::selection {
+      background: #C4A484;
+      color: #111315;
+    }
+    .lang-ru { display: none; }
+  </style>
+</head>
+<body class="bg-[#111315] font-['Lora',serif] text-[#E8E6E3] antialiased">
+  <article class="mx-auto max-w-[600px] px-6 pb-28 pt-12 md:pt-20">
+    <div class="flex items-start justify-between gap-8">
+      <a href="index.html" class="text-sm tracking-wide text-[#C4A484] transition hover:text-[#E8E6E3]">
+        <span class="lang-en">← Back to all stories</span><span class="lang-ru">← Назад ко всем историям</span>
+      </a>
+      <button id="lang-toggle" class="text-sm font-sans text-[#C4A484] hover:underline cursor-pointer">RU / EN</button>
+    </div>
+
+    <header class="mb-14 mt-16">
+      <p class="text-xs uppercase tracking-[0.32em] text-[#C4A484]"><span class="lang-en">Prose</span><span class="lang-ru">Проза</span></p>
+      <h1 class="mt-5 font-['Playfair_Display',serif] text-5xl font-medium leading-tight md:text-6xl"><span class="lang-en">The Shadow</span><span class="lang-ru">Тень</span></h1>
+      <div class="mt-8 h-px w-16 bg-[#C4A484]"></div>
+    </header>
+
+    <div class="space-y-8 text-lg leading-loose">
+      <p><span class="lang-en">I am so tired of being just a shadow that eternally seeks other people's walls.</span><span class="lang-ru">Я так устала быть всего лишь тенью, которая вечно ищет чужие стены.</span></p>
+      <p><span class="lang-en">In panic, I cling to people like light, just to manifest for a moment. So that someone notices my outlines. To feel: I exist. I matter. I am not emptiness.</span><span class="lang-ru">В панике я цепляюсь за людей, как за свет, лишь бы на миг проявиться. Чтобы кто-нибудь заметил мои очертания. Чтобы почувствовать: я существую. Я важна. Я — не пустота.</span></p>
+      <p><span class="lang-en">But a shadow does not exist by itself. It needs someone. Always someone. Light to cast it. A wall for it to fall on. And without them, I simply am not.</span><span class="lang-ru">Но тень не существует сама по себе. Ей нужен кто-то. Всегда кто-то. Свет, который её отбросит. Стена, на которую она упадёт. А без них меня попросту нет.</span></p>
+      <p><span class="lang-en">And I am tired of being absent.</span><span class="lang-ru">И я устала отсутствовать.</span></p>
+      <p><span class="lang-en">Maybe enough being a shadow?</span><span class="lang-ru">Может, хватит быть тенью?</span></p>
+      <p><span class="lang-en">I am capable of becoming a wall. Yes, not the most beautiful — rough, grey, concrete. It is icy, almost alien. But in the mornings, with the first timid rays of the sun, gentle light falls on it. And then it becomes not just warm — it burns.</span><span class="lang-ru">Я способна стать стеной. Да, не самой красивой — шершавой, серой, бетонной. Она ледяная, почти чужая. Но по утрам, с первыми робкими лучами солнца, на неё ложится мягкий свет. И тогда она становится не просто тёплой — она горит.</span></p>
+      <p><span class="lang-en">But it stands. By itself. Not clinging. Not disappearing when the sun leaves.</span><span class="lang-ru">Но она стоит. Сама по себе. Не цепляясь. Не исчезая, когда солнце уходит.</span></p>
+      <p><span class="lang-en">And the shadow... It sooner or later disappears. Without light, it simply is not.</span><span class="lang-ru">А тень... Она рано или поздно исчезает. Без света её попросту нет.</span></p>
+      <p><span class="lang-en">And I no longer want to be a shadow. I want to be a wall. Let it be cold, let it be plain, but real. Capable of withstanding the light, and not depending on it.</span><span class="lang-ru">И я больше не хочу быть тенью. Я хочу быть стеной. Пусть холодной, пусть простой, но настоящей. Способной выдержать свет — и не зависеть от него.</span></p>
+      <p><span class="lang-en">I also want to be.</span><span class="lang-ru">Я тоже хочу быть.</span></p>
+    </div>
+  </article>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('lang-toggle');
+      const enElements = document.querySelectorAll('.lang-en');
+      const ruElements = document.querySelectorAll('.lang-ru');
+
+      const displayFor = (el) => (el.tagName === 'SPAN' ? 'inline' : 'block');
+      const show = (elements) => elements.forEach(el => el.style.display = displayFor(el));
+      const hide = (elements) => elements.forEach(el => el.style.display = 'none');
+
+      const apply = (lang) => {
+        if (lang === 'ru') {
+          hide(enElements);
+          show(ruElements);
+        } else {
+          hide(ruElements);
+          show(enElements);
+        }
+        localStorage.setItem('lang', lang);
+      };
+
+      apply(localStorage.getItem('lang') === 'ru' ? 'ru' : 'en');
+
+      toggleBtn.addEventListener('click', () => {
+        const isEnVisible = enElements[0] && enElements[0].style.display !== 'none';
+        apply(isEnVisible ? 'ru' : 'en');
+      });
+    });
+  </script>
+</body>
+</html>

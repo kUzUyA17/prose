@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ring — Polina Kuzina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::selection {
+      background: #C4A484;
+      color: #111315;
+    }
+    .lang-ru { display: none; }
+  </style>
+</head>
+<body class="bg-[#111315] font-['Lora',serif] text-[#E8E6E3] antialiased">
+  <article class="mx-auto max-w-[600px] px-6 pb-28 pt-12 md:pt-20">
+    <div class="flex items-start justify-between gap-8">
+      <a href="index.html" class="text-sm tracking-wide text-[#C4A484] transition hover:text-[#E8E6E3]">
+        <span class="lang-en">← Back to all stories</span><span class="lang-ru">← Назад ко всем историям</span>
+      </a>
+      <button id="lang-toggle" class="text-sm font-sans text-[#C4A484] hover:underline cursor-pointer">RU / EN</button>
+    </div>
+
+    <header class="mb-14 mt-16">
+      <p class="text-xs uppercase tracking-[0.32em] text-[#C4A484]"><span class="lang-en">Prose</span><span class="lang-ru">Проза</span></p>
+      <h1 class="mt-5 font-['Playfair_Display',serif] text-5xl font-medium leading-tight md:text-6xl"><span class="lang-en">The Ring</span><span class="lang-ru">Кольцо</span></h1>
+      <div class="mt-8 h-px w-16 bg-[#C4A484]"></div>
+    </header>
+
+    <div class="space-y-8 text-lg leading-loose">
+      <p><span class="lang-en">You were given to me by the closest people — those I had admired since birth. That day, I finally felt their love. It was as simple as you, and as bright. It stood out among everything — and at the same time remained almost unnoticeable.</span><span class="lang-ru">Тебя подарили мне самые близкие — те, кем я восхищалась с рождения. В тот день я наконец почувствовала их любовь. Она была такой же простой, как ты, и такой же светлой. Она выделялась среди всего — и в то же время оставалась почти незаметной.</span></p>
+      <p><span class="lang-en">The main thing: from that very moment, you became a symbol. A symbol that they are near. That they didn't abandon me.</span><span class="lang-ru">Главное: с той самой минуты ты стал символом. Символом того, что они рядом. Что они меня не оставили.</span></p>
+      <p><span class="lang-en">You were a gold wedding ring. Probably strange to see you on a child's hand. After all, you were created for someone older. But you know what? You are the highest manifestation of feeling. It doesn't matter in what format. And I felt it. Finally felt it.</span><span class="lang-ru">Ты был золотым обручальным кольцом. Наверное, странно видеть тебя на детской руке. Ведь тебя создали для кого-то старше. Но знаешь что? Ты — высшее проявление чувства. Неважно, в каком виде. И я это почувствовала. Наконец почувствовала.</span></p>
+      <p><span class="lang-en">I didn't part with you for a moment. Your reflection told me what I had waited for my whole small life: I am needed by them.</span><span class="lang-ru">Я не расставалась с тобой ни на миг. Твоё отражение говорило мне то, чего я ждала всю свою маленькую жизнь: я нужна им.</span></p>
+      <p><span class="lang-en">And then you were taken away.</span><span class="lang-ru">А потом тебя забрали.</span></p>
+      <p><span class="lang-en">They took you, promising to return you soon. It was the earliest lie. And the most bitter. I lost you.</span><span class="lang-ru">Они забрали тебя, обещая скоро вернуть. Это была самая ранняя ложь. И самая горькая. Я тебя потеряла.</span></p>
+      <p><span class="lang-en">And along with you — their love.</span><span class="lang-ru">А вместе с тобой — и их любовь.</span></p>
+    </div>
+  </article>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('lang-toggle');
+      const enElements = document.querySelectorAll('.lang-en');
+      const ruElements = document.querySelectorAll('.lang-ru');
+
+      const displayFor = (el) => (el.tagName === 'SPAN' ? 'inline' : 'block');
+      const show = (elements) => elements.forEach(el => el.style.display = displayFor(el));
+      const hide = (elements) => elements.forEach(el => el.style.display = 'none');
+
+      const apply = (lang) => {
+        if (lang === 'ru') {
+          hide(enElements);
+          show(ruElements);
+        } else {
+          hide(ruElements);
+          show(enElements);
+        }
+        localStorage.setItem('lang', lang);
+      };
+
+      apply(localStorage.getItem('lang') === 'ru' ? 'ru' : 'en');
+
+      toggleBtn.addEventListener('click', () => {
+        const isEnVisible = enElements[0] && enElements[0].style.display !== 'none';
+        apply(isEnVisible ? 'ru' : 'en');
+      });
+    });
+  </script>
+</body>
+</html>
